@@ -1,20 +1,26 @@
 var app = angular.module("app", ["chart.js"]);
 
-app.factory('simpleFactory', function($https, $q) {
+app.factory('simpleFactory', function($https) {
   //var tempData = [
     //[65, 59, 80, 81, 56, 55, 40],
     //[28, 48, 40, 19, 86, 27, 90]
   //];
 
+var tempData = null;
 
-  var obj = {content:null};
-
-    $http.get('content.json').success(function(data) {
-        // you can do some processing here
-        obj.content = data;
+function LoadData() {
+    var defer = $q.defer();
+    $http.get('content.json').success(function (data) {
+        tempData = data;
+        defer.resolve();
     });
+    return defer.promise;
+}
 
-    return obj;
+return {
+    GetData: function () { return tempData ; },
+    LoadData:LoadData
+}
   //var deferred = $q.defer();
 	//$http.get('content.json').then(function (data)
 	//{
@@ -44,7 +50,7 @@ $scope.labels = ["January", "February", "March", "April", "May", "June", "July"]
 $scope.series = ['Series A', 'Series B'];
 
 
-$scope.data = simpleFactory.content();
+$scope.data = simpleFactory.GetData();
 
 
 //$scope.data = simpleFactory.content();

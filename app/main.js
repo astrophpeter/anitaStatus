@@ -10,7 +10,7 @@ var tempData = null;
 
 function LoadData() {
     var defer = $q.defer();
-    $http.get('content.json').success(function (data) {
+    $http.get('content.js').success(function (data) {
         tempData = data;
         console.log(tempData);
         defer.resolve();
@@ -44,8 +44,8 @@ return {
 
 //define controllers
 var controllers = {};
-
-controllers.tempGraph = function ($scope, simpleFactory) {
+app.controller('tempGraph', ['$scope', 'simpleFactory', function($scope, simpleFactory) {
+//controllers.tempGraph = function ($scope, simpleFactory) {
 
 $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
 $scope.series = ['Series A', 'Series B'];
@@ -80,4 +80,4 @@ $scope.options = {
 };
 };
 
-app.controller(controllers);
+//app.controller(controllers);

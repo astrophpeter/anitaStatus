@@ -12,6 +12,7 @@ function LoadData() {
     var defer = $q.defer();
     $http.get('content.json').success(function (data) {
         tempData = data;
+        console.log(tempData);
         defer.resolve();
     });
     return defer.promise;

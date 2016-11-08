@@ -1,0 +1,16 @@
+.navbar-inner {
+    min-height: 0px;
+}
+
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 100px;
+    height: 100px;
+    padding-top: 0;
+}
+
+#logo {
+  height: 100%;
+  margin-top: 0px;
+  margin-right: 15px;
+}

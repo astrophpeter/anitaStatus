@@ -44,14 +44,19 @@ return {
 
 //define controllers
 var controllers = {};
-app.controller('tempGraph', ['$scope', 'simpleFactory', function($scope, simpleFactory) {
-//controllers.tempGraph = function ($scope, simpleFactory) {
+controllers.tempGraph = function ($scope, simpleFactory) {
 
-$scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-$scope.series = ['Series A', 'Series B'];
+$scope.labels = ["5:10", "5:12", "5:14", "5:16", "5:18", "5:20", "5:22"];
+$scope.series = ['CPU', 'SURF 8','TURFIO faceplate'];
 
 
-$scope.data = simpleFactory.GetData();
+$scope.data = [
+
+  [40, 42, 35, 32, 33, 30, 27],
+  [28, 48, 40, 19, 14, 27, 30],
+  [15, 20, 21, 18, 14, 19, 23]
+
+];
 
 
 //$scope.data = simpleFactory.content();
@@ -59,25 +64,46 @@ $scope.data = simpleFactory.GetData();
 $scope.onClick = function (points, evt) {
   console.log(points, evt);
 };
-$scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+//$scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
 $scope.options = {
-  scales: {
-    yAxes: [
-      {
-        id: 'y-axis-1',
-        type: 'linear',
-        display: true,
-        position: 'left'
-      },
-      {
-        id: 'y-axis-2',
-        type: 'linear',
-        display: true,
-        position: 'right'
-      }
-    ]
-  }
+  legend: {
+            display: true,
+            labels: {
+                fontColor: 'rgb(255, 99, 132)'
+            }
+        },
+
+        scales: {
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Temperature [Degrees]'
+            }
+          }],
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Time [UTC]'
+            }
+          }]
+        }
+//  scales: {
+//    yAxes: [
+//      {
+//        id: 'y-axis-1',
+//        type: 'linear',
+//        display: true,
+//        position: 'left'
+//      },
+//      {
+//        id: 'y-axis-2',
+//        type: 'linear',
+//        display: true,
+//        position: 'right'
+//      }
+//    ]
+//  }
 };
 };
 
-//app.controller(controllers);
+app.controller(controllers);

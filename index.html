@@ -4,6 +4,7 @@
 
     <!--angularjs-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="modules/ui-bootstrap-2.2.0.min.js"></script>
 
     <!--angularchart-->
     <script src="modules/Chart.bundle.min.js"></script>
@@ -13,6 +14,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/myccs.css" rel="stylesheet">
+
 
      <!--appframework-->
      <script src="app/main.js"></script>
@@ -50,101 +52,106 @@
       </div>
 
 
-      <div class="row">
-        <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
-
-          <div id="content">
+<div class="row">
+  <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+          <!--Generate Tabs-->
+    <div id="content">
+        <div ng-controller="tabs">
             <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-              <li class="active"><a href="#overview" data-toggle="tab">Overview</a>
-              </li>
-              <li><a href="#orange" data-toggle="tab">Data Flow</a>
-              </li>
-              <li><a href="#memory" data-toggle="tab">Memory</a>
-              </li>
-              <li><a href="#temp" data-toggle="tab">Tempreture</a>
-              </li>
-              <li><a href="#power" data-toggle="tab">Power</a>
-              </li>
+              <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
+              <li ng-repeat="tab in tabs"><a data-toggle="tab" ng-href="#{{tab.name}}">{{tab.name}}</a></li>
             </ul>
           </div>
-          <div id="my-tab-content" class="tab-content">
-            <div class="tab-pane active" id="overview">
-              <table class="table">
-  <tbody>
-    <tr>
-      <td>Data Flow</td>
-      <td>Last Recieved:</td>
-      <td><span class="label label-success">Good</span></td>
-    </tr>
-    <tr>
-      <td>Memory</td>
-      <td>Last Recieved</td>
-      <td><span class="label label-warning">OK</span></td>
-    </tr>
-    <tr>
-      <td>Tempereature</td>
-      <td>Last Recieved:</td>
-      <td><span class="label label-success">Good</span></td>
-    </tr>
-    <tr>
-      <td>Power</td>
-      <td>Last Recieved:</td>
-      <td><span class="label label-danger">Bad</span></td>
-    </tr>
-  </tbody>
-</table>
+    </div>
 
-            </div>
-            <div class="tab-pane" id="orange">
+<div id="my-tab-content" class="tab-content">
+<div class="tab-pane active" id="overview">
 
+  <!--Overview Table-->
+  <div ng-controller="Status">
+<div class="panel panel-default">
+      <table class="table">
+        <thead>
+        <th>Type</th>
+        <th>Last Recieved [UTC]</th>
+        <th>Status</th>
 
-            </div>
-            <div class="tab-pane" id="memory">
+        </thead>
+        <tbody>
+          <tr ng-repeat="stat in dataStatus">
 
-            </div>
-            <div class="tab-pane" id="temp">
-              <div ng-controller="tempGraph">
-                <canvas id="line" class="chart chart-line" chart-data="data"
-                  chart-labels="labels" chart-series="series" chart-options="options"
-                  chart-dataset-override="datasetOverride" chart-click="onClick">
-                </canvas>
-              </div>
-            </div>
-            <div class="tab-pane" id="power">
+             <!--NAME-->
+             <td> {{stat.name}} </td>
 
-            </div>
-          </div>
+             <!--TIME STAMP-->
+             <td> {{stat.LastRecieved}} </td>
 
-        </div>
-
-          <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
-            <div class="panel panel-default">
-              <div class="panel-heading"><b>Recent Packet Meta Data</b></div>
-
-                <!-- List group -->
-                <ul class="list-group">
-                  <li class="list-group-item">
-                <ul style="list-style-type: none;">
-
-                <li>Telemetry: LOS</li>
-                <li>Recieved: 08/11/2016:8:50 UTC</li>
-                <li>Type: House Keeping</li>
-              </ul>
-
-                  </li>
-                  <li class="list-group-item"></li>
-                  <li class="list-group-item"></li>
-                  <li class="list-group-item"></li>
-                  <li class="list-group-item"></li>
-                </ul>
-
-            </div>
-
-
-
-        </div>
+             <!--STATUS BADGE-->
+             <td>
+                <!--Check if status is good/bad and alter badge css-->
+                <div class="label"
+                ng-class="{'label-success': stat.status === 'good',
+                'label-danger': stat.status === 'bad'}">
+                 {{stat.status}}</div>
+             </td>
+          </tr>
+        <tbody>
+      </table>
     </div>
   </div>
+
+</div>
+
+<!--dataflow graph-->
+<div class="tab-pane" id="dataflow">
+
+
+</div>
+
+<!--Memomery graph-->
+<div class="tab-pane" id="memory">
+
+</div>
+
+<div class="tab-pane fade" id="Temperature">
+   <div ng-controller="tempGraph">
+        <canvas id="line" class="chart chart-line" chart-data="data"
+                  chart-labels="labels" chart-series="series" chart-options="options"
+                  chart-dataset-override="datasetOverride" chart-click="onClick">
+        </canvas>
+   </div>
+</div>
+
+<div class="tab-pane" id="power">
+
+</div>
+
+</div>
+
+        </div>
+
+<div class="col-lg-4 col-md-3 col-sm-12 col-xs-12">
+
+  <!--Meta Data Display-->
+  <div ng-controller="metadataCtrl">
+     <div class="panel panel-default">
+        <div class="panel-heading"><b>Recent Packet Meta Data</b></div>
+
+           <ul class="list-group">
+             <!--Print 3 most recent Packet Meta Data.-->
+              <li class="list-group-item" ng-repeat="dat in metadata | limitTo:3:0">
+                   <p>Telemetry: {{dat.telem}}</p>
+                   <p>Recieved: {{dat.recieved}}</p>
+                   <p>Size: {{dat.size}}</p>
+              </li>
+           </ul>
+
+       </div>
+    </div>
+
+</div>
+</div>
+</div>
 
 
 

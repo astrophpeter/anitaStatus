@@ -1,4 +1,13 @@
-var app = angular.module("app", ["chart.js","ui.bootstrap"]);
+
+
+// Chart config files
+Chart.defaults.global.elements.line.fill = false;
+Chart.defaults.global.legend.labels.usePointStyle = false;
+
+
+var app = angular.module("app", ['ngAnimate',"chart.js","ui.bootstrap"]);
+
+
 
 app.factory('simpleFactory', function($q, $http) {
   //var tempData = [
@@ -112,10 +121,13 @@ $scope.options = {
 // controller to the overview tab
 controllers.Status = function ($scope) {
 
+
+
 $scope.dataStatus = [{name: 'Data', LastRecieved: "na", status: 'good'},
 {name: 'Temperature', LastRecieved: "na", status: 'good'},
 {name: 'Memory', LastRecieved: "na", status: 'bad'},
 {name: 'Power', LastRecieved: "na", status: 'good'}];
+
 
 };
 
@@ -129,6 +141,7 @@ controllers.metadataCtrl = function($http ,$scope) {
 
   var metaData = {};
 
+  var object_by_id = $filter('filter')(foo.results, {name: data })[0];
   $scope.metaData = function($scope, $http) {
     $http.get("contnet.js").then(function (response) {
         return response.data.records;

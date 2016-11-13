@@ -2,13 +2,6 @@
 <html ng-app="app">
   <head>
 
-    <!--angularjs-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="modules/ui-bootstrap-2.2.0.min.js"></script>
-
-    <!--angularchart-->
-    <script src="modules/Chart.bundle.min.js"></script>
-    <script src="modules/angular-chart.min.js"></script>
 
 
     <!-- Bootstrap -->
@@ -16,18 +9,12 @@
     <link href="css/myccs.css" rel="stylesheet">
 
 
-     <!--appframework-->
-     <script src="app/main.js"></script>
-
   </head>
   <body>
 
-    <nav class="navbar navbar-default">
+    <!--header banner-->
+    <?php include 'includes/header.php';?>
 
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index.html"><img id="logo" src="assets/logo_trans.png"/></a>
-    </nav>
-</div>
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -116,18 +103,42 @@
 </div>
 
 <div class="tab-pane fade" id="Temperature">
-
+<!--Data toggle info alert-->
 <div class="alert alert-info fade in">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
       <span class="glyphicon glyphicon-info-sign"></span> Click Legends to Toggle Data.
 </div>
+<!--specific status-->
+<div ng-controller="Status">
+<div class="panel panel-default">
+    <table class="table">
+      <tbody>
+        <tr ng-repeat="stat in dataStatus" ng-show="stat.name == 'Temperature'">
 
+           <!--NAME-->
+           <td> {{stat.name}} </td>
+
+           <!--TIME STAMP-->
+           <td>Last Recieved: {{stat.LastRecieved}} </td>
+
+           <!--STATUS BADGE-->
+           <td>
+              <!--Check if status is good/bad and alter badge css-->
+              <div class="label"
+              ng-class="{'label-success': stat.status === 'good',
+              'label-danger': stat.status === 'bad'}">
+               {{stat.status}}</div>
+           </td>
+        </tr>
+      <tbody>
+    </table>
+  </div>
+   <!--Temerautre Graph-->
    <div ng-controller="tempGraph">
         <canvas id="line" class="chart chart-line" chart-data="data"
                   chart-labels="labels" chart-series="series" chart-options="options"
                   chart-dataset-override="datasetOverride" chart-click="onClick">
         </canvas>
-   </div>
 </div>
 
 <div class="tab-pane" id="power">
@@ -137,7 +148,8 @@
 </div>
 
         </div>
-
+</div>
+</div>
 <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12">
 
   <!--Meta Data Display-->
@@ -161,7 +173,17 @@
 </div>
 </div>
 
+    <!--angularjs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="modules/ui-bootstrap-2.2.0.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
 
+    <!--angularchart-->
+    <script src="modules/Chart.bundle.min.js"></script>
+    <script src="modules/angular-chart.min.js"></script>
+
+    <!--appframework-->
+    <script src="app/main.js"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

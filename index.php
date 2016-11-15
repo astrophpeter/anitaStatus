@@ -104,10 +104,7 @@
 
 <div class="tab-pane fade" id="Temperature">
 <!--Data toggle info alert-->
-<div class="alert alert-info fade in">
-      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-      <span class="glyphicon glyphicon-info-sign"></span> Click Legends to Toggle Data.
-</div>
+<?php include 'includes/dataToggleAlert.php';?>
 <!--specific status-->
 <div ng-controller="Status">
 <div class="panel panel-default">
@@ -169,9 +166,18 @@
        </div>
     </div>
 
+    <div ng-controller="fruitsController">
+    <li ng-repeat="fruit in fruits">
+      {{fruit.name}} </li>
+    <div>
+
 </div>
 </div>
 </div>
+</div>
+
+<!--Footer-->
+<?php include 'includes/footer.php';?>
 
     <!--angularjs-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>

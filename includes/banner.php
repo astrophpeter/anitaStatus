@@ -1,4 +1,11 @@
 <?php
+
+//////////////////////////////////////////////
+//         Header include file              //
+//         @author Peter McGill             //
+//     @contact petermcgill94@gmail.com     //
+//////////////////////////////////////////////
+
 echo '
 
 <div class="alert alert-info" role="alert">
@@ -17,8 +24,6 @@ echo '
     </div>
 
 </div>
-</div>
-
-'
+</div>';
 
 ?>

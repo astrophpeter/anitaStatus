@@ -10,7 +10,7 @@ echo '<footer class="footer">
          <div class="container">
            <p class="text-muted">
 
-            <a href="https://hep.ucl.ac.uk/uhen/anita/">
+            <a href="https://www.hep.ucl.ac.uk/uhen/anita/">
                ANITA
             </a>
 
@@ -28,9 +28,12 @@ echo '<footer class="footer">
 
             |
 
-            <a href="http://www.chartjs.org/">
-               Chartjs
-            </a>
+
+            Contact: <a href="mailto:peter.mcgill.13@ucl.ac.uk">peter.mcgill.13@ucl.ac.uk</a>
+
+            |
+
+            Submitt issues, comments, and suggestions <a href="https://github.com/petermcgill94/anitaStatus/issues">here</a>.
 
            </p>
          </div>

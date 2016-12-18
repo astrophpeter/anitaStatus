@@ -78,8 +78,8 @@
                                           && vital.timeList[0].mean >= configs[0].PV[0].current[0].min ">
                                           <?php include 'includes/goodLabel.php';?>
                                        </div>
-                                       <div ng-if="vital.timeList[0].mean >= configs[0].PV[0].current[0].max
-                                          || vital.timeList[0].mean <= configs[0].PV[0].current[0].min">
+                                       <div ng-if="vital.timeList[0].mean > configs[0].PV[0].current[0].max
+                                          || vital.timeList[0].mean < configs[0].PV[0].current[0].min">
                                           <?php include 'includes/warningLabel.php';?>
                                        </div>
                                     </td>
@@ -97,8 +97,8 @@
                                           && vital.timeList[0].mean >= configs[0].Batt[0].current[0].min ">
                                           <?php include 'includes/goodLabel.php';?>
                                        </div>
-                                       <div ng-if="vital.timeList[0].mean >= configs[0].Batt[0].current[0].max
-                                          || vital.timeList[0].mean <= configs[0].Batt[0].current[0].min">
+                                       <div ng-if="vital.timeList[0].mean > configs[0].Batt[0].current[0].max
+                                          || vital.timeList[0].mean < configs[0].Batt[0].current[0].min">
                                           <?php include 'includes/warningLabel.php';?>
                                        </div>
                                     </td>
@@ -118,8 +118,8 @@
                                           && vital.timeList[0].mean >= configs[0].CPU[0].temp[0].min ">
                                           <?php include 'includes/goodLabel.php';?>
                                        </div>
-                                       <div ng-if="vital.timeList[0].mean >= configs[0].CPU[0].temp[0].max
-                                          || vital.timeList[0].mean <= configs[0].CPU[0].temp[0].min">
+                                       <div ng-if="vital.timeList[0].mean > configs[0].CPU[0].temp[0].max
+                                          || vital.timeList[0].mean < configs[0].CPU[0].temp[0].min">
                                           <?php include 'includes/warningLabel.php';?>
                                        </div>
                                     </td>
@@ -136,8 +136,8 @@
                                           && vital.timeList[0].mean >= configs[0].Core1[0].temp[0].min ">
                                           <?php include 'includes/goodLabel.php';?>
                                        </div>
-                                       <div ng-if="vital.timeList[0].mean >= configs[0].Core1[0].temp[0].max
-                                          || vital.timeList[0].mean <= configs[0].Core1[0].temp[0].min">
+                                       <div ng-if="vital.timeList[0].mean > configs[0].Core1[0].temp[0].max
+                                          || vital.timeList[0].mean < configs[0].Core1[0].temp[0].min">
                                           <?php include 'includes/warningLabel.php';?>
                                        </div>
                                     </td>
@@ -154,8 +154,8 @@
                                           && vital.timeList[0].mean >= configs[0].Core2[0].temp[0].min ">
                                           <?php include 'includes/goodLabel.php';?>
                                        </div>
-                                       <div ng-if="vital.timeList[0].mean >= configs[0].Core2[0].temp[0].max
-                                          || vital.timeList[0].mean <= configs[0].Core2[0].temp[0].min">
+                                       <div ng-if="vital.timeList[0].mean > configs[0].Core2[0].temp[0].max
+                                          || vital.timeList[0].mean < configs[0].Core2[0].temp[0].min">
                                           <?php include 'includes/warningLabel.php';?>
                                        </div>
                                     </td>
@@ -175,8 +175,8 @@
                                           && vital.timeList[0].mean >= configs[0]['+24'][0].voltage[0].min ">
                                           <?php include 'includes/goodLabel.php';?>
                                        </div>
-                                       <div ng-if="vital.timeList[0].mean >= configs[0]['+24'][0].voltage[0].max
-                                          || vital.timeList[0].mean <= configs[0]['+24'][0].voltage[0].min">
+                                       <div ng-if="vital.timeList[0].mean > configs[0]['+24'][0].voltage[0].max
+                                          || vital.timeList[0].mean < configs[0]['+24'][0].voltage[0].min">
                                           <?php include 'includes/warningLabel.php';?>
                                        </div>
                                     </td>
@@ -193,8 +193,8 @@
                                           && vital.timeList[0].mean >= configs[0].PV[0].voltage[0].min ">
                                           <?php include 'includes/goodLabel.php';?>
                                        </div>
-                                       <div ng-if="vital.timeList[0].mean >= configs[0].PV[0].voltage[0].max
-                                          || vital.timeList[0].mean <= configs[0].PV[0].voltage[0].min">
+                                       <div ng-if="vital.timeList[0].mean > configs[0].PV[0].voltage[0].max
+                                          || vital.timeList[0].mean < configs[0].PV[0].voltage[0].min">
                                           <?php include 'includes/warningLabel.php';?>
                                        </div>
                                     </td>

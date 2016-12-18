@@ -14,7 +14,7 @@ if (dev) {
     var PATH_TO_STATUS_DATA = 'hkStatus.json';
 } else {
     var PATH_TO_STATUS_DATA =
-		'../../../../../uhen/anita/aware/output/ANITA4/statusPage/hkStatus.json.gz';
+		'../../../../uhen/anita/aware/output/ANITA4/statusPage/hkStatus.json.gz';
 }
 
 // Start of App.

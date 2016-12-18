@@ -44,7 +44,7 @@
                <div id="content">
                   <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
                      <li class="active"><a href="#overview" data-toggle="tab"><img src="fonts/menu.svg" alt="" width="25" height="15" align="middle">Overview</a></li>
-                     <li><a href="#config" data-toggle="tab"><img src="fonts/cog.svg" alt="" width="25" height="15" align="middle">Config</a></li>
+                     <!--<li><a href="#config" data-toggle="tab"><img src="fonts/cog.svg" alt="" width="25" height="15" align="middle">Config</a></li>-->
                   </ul>
 
 
@@ -204,9 +204,9 @@
                         </div>
                      </div>
                   </div>
-                  <div class="tab-pane active" id="config">
+                <!--  <div class="tab-pane active" id="config">
                      IYA
-                  </div>
+                  </div>-->
 
                </div>
             </div>

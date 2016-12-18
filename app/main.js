@@ -8,7 +8,7 @@
 
 
 //development vairable to retrieve test data when working locally.
-var dev = fasle;
+var dev = false;
 
 if (dev) {
     var PATH_TO_STATUS_DATA = 'hkStatus.json';

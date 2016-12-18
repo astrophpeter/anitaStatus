@@ -10,7 +10,27 @@ echo '<footer class="footer">
          <div class="container">
            <p class="text-muted">
 
-            This is some footer Text.
+            <a href="https://hep.ucl.ac.uk/uhen/anita/">
+               ANITA
+            </a>
+
+            |
+
+            <a href="http://getbootstrap.com/">
+               Bootstrap
+            </a>
+
+            |
+
+            <a href="https://angularjs.org/">
+               AngularJS
+            </a>
+
+            |
+
+            <a href="http://www.chartjs.org/">
+               Chartjs
+            </a>
 
            </p>
          </div>

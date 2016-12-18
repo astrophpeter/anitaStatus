@@ -6,13 +6,15 @@
 //    @contact petermcgill94@gmail.com      //
 //////////////////////////////////////////////
 
-echo '<div class="alert alert-info fade in">
-         <a href="#" class="close" data-dismiss="alert"
-        aria-label="close">&times;</a>
+echo '<div class="alert alert-info">
            <span class="glyphicon glyphicon-info-sign"></span>
 
-           Click legends to toggle data.
+           Anita Sofware
 
-      </div>';
+           <a href="#"><li>AWARE</li></a>
+           <a href="#"><li>WebAnita</li></a>
+           <a href="#"><li>Log Form Instructions</li></a>
+           
+'
 
 ?>

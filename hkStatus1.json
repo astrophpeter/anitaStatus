@@ -1,0 +1,93 @@
+{
+        "timeSum":{
+        "run" : 212,
+        "instrument" : "ANITA4",
+        "startTime" : "2016-12-16 10:43:33",
+        "timeList" : [
+        {
+                "startTime" :1481884980 ,
+                "duration" :60 ,
+                "numEnts" :1
+        }
+        ]
+        ,
+"varList" : [
+{
+        "name" : "currents1",
+        "label" : "PV",
+        "avgType" : "angleDegree",
+        "timeList" : [
+        {
+                "mean" :6.29895 ,
+                "stdDev" :0
+        }
+        ]
+        }       ,
+{
+        "name" : "currents6",
+        "label" : "Batt",
+        "avgType" : "angleDegree",
+        "timeList" : [
+        {
+                "mean" :0.585952 ,
+                "stdDev" :0
+        }
+        ]
+        }       ,
+{
+        "name" : "intTemps0",
+        "label" : "CPU",
+        "avgType" : "angleDegree",
+        "timeList" : [
+        {
+                "mean" :51 ,
+                "stdDev" :0
+        }
+        ]
+        }       ,
+{
+        "name" : "intTemps1",
+        "label" : "Core1",
+        "avgType" : "angleDegree",
+        "timeList" : [
+        {
+                "mean" :48 ,
+                "stdDev" :0
+        }
+        ]
+        }       ,
+{
+        "name" : "intTemps2",
+        "label" : "Core2",
+        "avgType" : "angleDegree",
+        "timeList" : [
+        {
+                "mean" :51 ,
+                "stdDev" :0
+        }
+        ]
+        }       ,
+{
+        "name" : "voltages3",
+        "label" : "+24",
+        "avgType" : "angleDegree",
+        "timeList" : [
+        {
+                "mean" :26.5574 ,
+                "stdDev" :0
+        }
+        ]
+        }       ,
+{
+        "name" : "voltages4",
+        "label" : "PV",
+        "avgType" : "angleDegree",
+        "timeList" : [
+        {
+                "mean" :67.3012 ,
+                "stdDev" :0
+        }
+        ]
+        }       ]
+        }
+}

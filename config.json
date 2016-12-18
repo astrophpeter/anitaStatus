@@ -1,8 +1,82 @@
 {
-	"temerature": [
-		{
-		"min":"10",
-		"max":"60"
-		}
-	]
+
+"configList" : [
+{
+
+"CPU" : [
+{
+   "temp" :  [
+   {
+      "min"  : 0,
+      "max"  : 50
+   }
+   ]
+}
+],
+
+"Core1" : [
+{
+    "temp" :  [
+    {
+       "min"  : 0,
+       "max"  : 50
+    }
+    ]
+}
+],
+
+"Core2" : [
+{
+    "temp" :  [
+    {
+       "min"  : 0,
+       "max"  : 50
+    }
+    ]
+}
+],
+
+"PV" : [
+{
+    "current" :  [
+    {
+       "min"  : 0,
+       "max"  : 50
+    }
+    ],
+
+    "voltage" :  [
+    {
+       "min"  : 0,
+       "max"  : 50
+    }
+    ]
+}
+],
+
+"Batt" : [
+{
+    "name" : "Batt",
+    "current" :  [
+    {
+       "min"  : 0,
+       "max"  : 50
+    }
+    ]
+}
+],
+
+"+24" : [
+{
+    "name" : "+24",
+    "voltage" :  [
+    {
+       "min"  : 0,
+       "max"  : 50
+    }
+    ]
+}
+]
+}
+]
 }

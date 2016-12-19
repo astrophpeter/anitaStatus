@@ -241,7 +241,7 @@
                            if (file_exists($filename)) {
                                echo "$filename was last modified: " . date ("m-d-y H:i:s.", filemtime($filename));
                            } else {
-                             echo "not here"
+                             echo "not here";
                            }
 
                            ?> </p>

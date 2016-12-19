@@ -4,6 +4,14 @@
       <!-- Bootstrap -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/myccs.css" rel="stylesheet">
+
+      <!--Make changes in config immediate-->
+      <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+     <!--Refresh every 5 mins-->
+     <META HTTP-EQUIV="refresh" CONTENT="300">
+
+
    </head>
    <body>
       <!--header banner-->
@@ -182,7 +190,7 @@
                                     </td>
                                  </tr>
                                  <tr ng-repeat="vital in varList.slice(6,7)">
-                                    <td></td>
+                                    <td> </td>
                                     <td> {{ vital.label }} </td>
                                     <!--TIME STAMP-->
                                     <td> {{ vital.timeList[0].mean | number : 2 }}</td>

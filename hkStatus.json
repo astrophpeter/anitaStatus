@@ -29,7 +29,7 @@
         "avgType" : "angleDegree",
         "timeList" : [
         {
-                "mean" :0.585952 ,
+                "mean" :-0.585952 ,
                 "stdDev" :0
         }
         ]

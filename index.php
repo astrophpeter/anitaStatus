@@ -231,7 +231,10 @@
 
                         <li class="list-group-item">
 
+
                            <p> <b>Start Time</b> : {{ time }}</p>
+
+                           <p><b>Last Recieved</b> <?php include 'includes/getModTime.php';?> </p>
 
                            <p> <b>Run Number</b> : {{ run }}</p>
 

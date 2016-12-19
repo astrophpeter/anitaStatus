@@ -243,7 +243,7 @@
                            } else {
                                echo "not here";
                            }
-
+                           clearstatcache();
                            ?> </p>
 
                            <p> <b>Run Number</b> : {{ run }}</p>

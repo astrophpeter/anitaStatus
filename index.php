@@ -239,7 +239,7 @@
 
                            $filename = '../../../uhen/anita/aware/output/ANITA4/statusPage/hkStatus.json.gz';
                            if (file_exists($filename)) {
-                               echo  . date ("Y-m-d H:i:s.", filemtime($filename));
+                               echo "" . date ("Y-m-d H:i:s.", filemtime($filename));
                            } else {
                                echo "not here";
                            }

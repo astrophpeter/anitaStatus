@@ -51,8 +51,8 @@
                <!--Tabs-->
                <div id="content">
                   <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-                     <li class="active"><a href="#overview" data-toggle="tab"><img src="fonts/menu.svg" alt="" width="25" height="15" align="middle">Overview</a></li>
-                     <!--<li><a href="#config" data-toggle="tab"><img src="fonts/cog.svg" alt="" width="25" height="15" align="middle">Config</a></li>-->
+                     <li class="active"><a href="#overview" data-toggle="tab"><img src="fonts/component.svg" alt="" width="30" height="20" align="middle">Components</a></li>
+                     <li><a href="#memory" data-toggle="tab"><img src="fonts/memory.svg" alt="" width="25" height="15" align="middle">Memory</a></li>
                   </ul>
 
 
@@ -212,10 +212,98 @@
                         </div>
                      </div>
                   </div>
-                <!--  <div class="tab-pane active" id="config">
-                     IYA
-                  </div>-->
 
+                <div class="tab-pane" id="memory">
+                  <div ng-controller="configController">
+                  <table class="table table-bordered">
+                     <thead class="text-center">
+                        <th class="text-center">Drive</th>
+                        <th class="text-center">Space Remaining [Mb]</th>
+                        <th class="text-center">Percent Full</th>
+                     </thead>
+
+                     <tbody class="text-center">
+                     <tr>
+                        <td> Ram </td>
+
+                        <td> {{memRam | toMB | number : 3}} </td>
+
+                        <td>
+
+                          <div ng-if="percentRam <= configs[0].Ram[0].memory[0].max && percentRam >= configs[0].Ram[0].memory[0].min">
+                           <div class="progress">
+                           <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{percentRam | number : 0}}"
+                            aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( percentRam  + '%' ) }">
+                            <span> Good : {{percentRam | number : 0 }} %</span>
+                          </div>
+                           </div>
+                          </div>
+                          <div ng-if="percentRam > configs[0].Ram[0].memory[0].max || percentRam < configs[0].Ram[0].memory[0].min">
+                          <div class="progress">
+                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{percentRam | number : 0}}"
+                           aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( percentRam  + '%' ) }">
+                           <span> Warning : {{percentRam | number : 0 }} %</span>
+                          </div>
+                          </div>
+                          </div>
+
+                        </td>
+                     </tr>
+
+                     <tr>
+                        <td> Helium1 </td>
+
+                        <td> {{memHel1 | toMB | number : 3 }} </td>
+
+                        <td>
+                          <div ng-if="percentHel1 <= configs[0].Hel1[0].memory[0].max && percentHel2 >= configs[0].Hel1[0].memory[0].min">
+                           <div class="progress">
+                           <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{percentHel1 | number : 0}}"
+                            aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( percentHel1  + '%' ) }">
+                            <span> Good : {{percentHel1 | number : 0 }} %</span>
+                          </div>
+                           </div>
+                         </div>
+                         <div ng-if="percentHel1 > configs[0].Hel1[0].memory[0].max || percentHel1 < configs[0].Hel1[0].memory[0].min">
+                          <div class="progress">
+                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{percentHel1 | number : 0}}"
+                           aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( percentHel1  + '%' ) }">
+                           <span> Warning : {{percentHel1 | number : 0 }} %</span>
+                         </div>
+                          </div>
+                        </div>
+                       </td>
+                     </tr>
+
+                     <tr>
+                        <td> Helium2 </td>
+
+                        <td> {{memHel2 | toMB | number : 3}} </td>
+
+                        <td>
+                          <div ng-if="percentHel2 <= configs[0].Hel2[0].memory[0].max && percentHel2 >= configs[0].Hel2[0].memory[0].min">
+                           <div class="progress">
+                           <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{percentHel2 | number : 0}}"
+                            aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( percentHel2  + '%' ) }">
+                            <span> Good : {{percentHel2 | number : 0 }} %</span>
+                          </div>
+                           </div>
+                         </div>
+                         <div ng-if="percentHel2 > configs[0].Hel2[0].memory[0].max || percentHel2 < configs[0].Hel2[0].memory[0].min">
+                          <div class="progress">
+                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{percentHel2 | number : 0}}"
+                           aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( percentHel2  + '%' ) }">
+                           <span> Warning : {{percentHel2 | number : 0 }} %</span>
+                         </div>
+                          </div>
+                        </div>
+                       </td>
+                     </tr>
+                   </tbody>
+
+                  </table>
+                </div>
+              </div>
                </div>
             </div>
 
@@ -270,6 +358,7 @@
       <!--angularjs-->
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.14/angular-filter.js"></script>
 
       <!--appframework-->
       <script src="app/main.js"></script>

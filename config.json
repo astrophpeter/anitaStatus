@@ -76,7 +76,47 @@
     }
     ]
 }
+],
+"Ram" : [
+{
+  "name" : "Ram",
+  "memory" : [
+    {
+      "min": 30,
+      "max": 90
+    }
+  ]
+}
+
+],
+
+"Hel1" : [
+{
+  "name" : "Helium1",
+  "memory" : [
+    {
+      "min": 30,
+      "max": 90
+    }
+  ]
+}
+
+],
+
+"Hel2" : [
+{
+  "name" : "Helium2",
+  "memory" : [
+    {
+      "min": 30,
+      "max": 90
+    }
+  ]
+}
+
 ]
+
+
 }
 ]
 }

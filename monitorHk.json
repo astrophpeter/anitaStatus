@@ -1,0 +1,82 @@
+{
+        "timeSum":{
+        "run" : 50,
+        "instrument" : "ANITA4",
+        "startTime" : "2016-12-03 02:43:00",
+        "timeList" : [
+        {
+                "startTime" :1480732980 ,
+                "duration" :60 ,
+                "numEnts" :1
+        }
+        ]
+        ,
+"varList" : [
+{
+        "name" : "diskPercent0",
+        "label" : "Ramdisk",
+        "avgType" : "angleDegree",
+        "timeList" : [
+        {
+                "mean" :74.1 ,
+                "stdDev" :0
+        }
+        ]
+        }       ,
+{
+        "name" : "diskPercent4",
+        "label" : "Helium1",
+        "avgType" : "angleDegree",
+        "timeList" : [
+        {
+                "mean" :88.904 ,
+                "stdDev" :0
+        }
+        ]
+        }       ,
+{
+        "name" : "diskPercent5",
+        "label" : "Helium2",
+        "avgType" : "angleDegree",
+        "timeList" : [
+        {
+                "mean" :88.9056 ,
+                "stdDev" :0
+        }
+        ]
+        }       ,
+{
+       "name" : "diskSpace0",
+        "label" : "Ramdisk",
+        "avgType" : "angleDegree",
+        "timeList" : [
+        {
+                "mean" :2964 ,
+                "stdDev" :0
+        }
+        ]
+        }       ,
+{
+        "name" : "diskSpace4",
+        "label" : "Helium1",
+        "avgType" : "angleDegree",
+        "timeList" : [
+        {
+                "mean" :7.11232e+06 ,
+                "stdDev" :0
+        }
+        ]
+        }       ,
+{
+        "name" : "diskSpace5",
+        "label" : "Helium2",
+        "avgType" : "angleDegree",
+        "timeList" : [
+        {
+                "mean" :7.11245e+06 ,
+                "stdDev" :0
+        }
+        ]
+        }       ]
+        }
+}

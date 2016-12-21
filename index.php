@@ -226,7 +226,7 @@
                      <tr>
                         <td> Ram </td>
 
-                        <td> {{memRam | number : 3}} </td>
+                        <td> {{memRam}} </td>
 
                         <td>
 
@@ -253,7 +253,7 @@
                      <tr>
                         <td> Helium1 </td>
 
-                        <td> {{memHel1 |  number : 3 }} </td>
+                        <td> {{memHel1}} </td>
 
                         <td>
                           <div ng-if="percentHel1 <= configs[0].Hel1[0].memory[0].max && percentHel2 >= configs[0].Hel1[0].memory[0].min">
@@ -278,7 +278,7 @@
                      <tr>
                         <td> Helium2 </td>
 
-                        <td> {{memHel2 | number : 3}} </td>
+                        <td> {{memHel2}} </td>
 
                         <td>
                           <div ng-if="percentHel2 <= configs[0].Hel2[0].memory[0].max && percentHel2 >= configs[0].Hel2[0].memory[0].min">

@@ -52,7 +52,7 @@
                <div id="content">
                   <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
                      <li class="active"><a href="#overview" data-toggle="tab"><img src="fonts/component.svg" alt="" width="30" height="20" align="middle">Components</a></li>
-                     <li><a href="#memory" data-toggle="tab"><img src="fonts/memory.svg" alt="" width="25" height="15" align="middle">Memory</a></li>
+                     <li><a href="#memory" data-toggle="tab"><img src="fonts/memory.svg" alt="" width="25" height="15" align="middle">Storage</a></li>
                   </ul>
 
 

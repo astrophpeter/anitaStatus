@@ -322,7 +322,7 @@
 
                            <p> <b>Start Time</b> : {{ time }}</p>
 
-                           <p><b>Last Recieved</b> <?php
+                           <p><b>Last Received</b> <?php
                            // outputs e.g.  somefile.txt was last modified: December 29 2002 22:16:23.
 
                            $filename = '../../../uhen/anita/aware/output/ANITA4/statusPage/hkStatus.json.gz';

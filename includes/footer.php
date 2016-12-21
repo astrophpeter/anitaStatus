@@ -33,7 +33,7 @@ echo '<footer class="footer">
 
             |
 
-            Submitt issues, comments, and suggestions <a href="https://github.com/petermcgill94/anitaStatus/issues">here</a>.
+            Submit issues, comments, and suggestions <a href="https://github.com/petermcgill94/anitaStatus/issues">here</a>.
 
            </p>
          </div>

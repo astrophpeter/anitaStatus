@@ -323,13 +323,26 @@
                            <p> <b>Start Time</b> : {{ time }}</p>
 
                            <p><b>Last Received</b> <?php
-                           // outputs e.g.  somefile.txt was last modified: December 29 2002 22:16:23.
+
 
                            $filename = '../../../uhen/anita/aware/output/ANITA4/statusPage/hkStatus.json.gz';
                            if (file_exists($filename)) {
-                               echo "" . date ("Y-m-d H:i:s.", filemtime($filename));
+                               $file_time = new DateTime(date ("Y-m-d H:i:s.", filemtime($filename)));
+                               $current_time = new DateTime(date('Y-m-d H:i:s'));
+
+                               $diff_time = $file_time->diff($current_time);
+
+                               if ($diff_time->i < 5) {
+                                 echo '<span class="label label-sucess">' . $file_time->format('Y-m-d H:i:s') . '</span>';
+                               } else if ($diff_time->i < 10) {
+                                 echo '<span class="label label-warning">' . $file_time->format('Y-m-d H:i:s') . '</span>';
+                               } else {
+                                 echo '<span class="label label-danger">' . $file_time->format('Y-m-d H:i:s') . '</span>';
+                               }
+
+
                            } else {
-                               echo "not here";
+                               echo "No Info";
                            }
                            clearstatcache();
                            ?> </p>

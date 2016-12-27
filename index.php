@@ -266,7 +266,7 @@
                          </div>
                          <div ng-if="percentHel1 > configs[0].Hel1[0].memory[0].max || percentHel1 < configs[0].Hel1[0].memory[0].min">
                           <div class="progress">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{percentHel1 | number : 0}}"
+                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{ 100 - percentHel1 | number : 0}}"
                            aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( percentHel1  + '%' ) }">
                            <span> Warning : {{percentHel1 | number : 0 }} %</span>
                          </div>

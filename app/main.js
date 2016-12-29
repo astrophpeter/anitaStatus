@@ -61,7 +61,10 @@ anitaStatusApp.controller('timeController', function($scope, getStatus) {
 
 // grabs config settings and indvidual component data.
 anitaStatusApp.controller('configController', function($scope, getStatus, getConfig,getMem) {
-	getConfig.getConfigAsync(function(results) {
+
+
+
+  getConfig.getConfigAsync(function(results) {
 		console.log('config async returned value');
 		$scope.configs= results.configList;
 	});
@@ -80,7 +83,9 @@ anitaStatusApp.controller('configController', function($scope, getStatus, getCon
     $scope.percentHel2 = results.timeSum.varList.slice(2,3)[0].timeList[0].mean;
     $scope.memHel2 = results.timeSum.varList.slice(5,6)[0].timeList[0].mean;
 	});
+
 });
+
 
 // convert bytes to MB
 anitaStatusApp.filter('toMB', function() {

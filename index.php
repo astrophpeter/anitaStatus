@@ -61,6 +61,7 @@
                   <div class="tab-pane active" id="overview">
                      <!--Overview Table-->
                      <div ng-controller="configController">
+
                         <div class="panel panel-default">
                            <table class="table table-bordered">
                               <thead class="text-center">
@@ -210,7 +211,7 @@
                               <tbody>
                            </table>
                         </div>
-                     </div>
+                   </div>
                   </div>
 
                 <div class="tab-pane" id="memory">
@@ -219,7 +220,7 @@
                      <thead class="text-center">
                         <th class="text-center">Drive</th>
                         <th class="text-center">Space Remaining [Mb]</th>
-                        <th class="text-center">Percent Full</th>
+                        <th class="text-center">Space Remaining [%]</th>
                      </thead>
 
                      <tbody class="text-center">
@@ -320,32 +321,10 @@
                         <li class="list-group-item">
 
 
-                           <p> <b>Start Time</b> : {{ time }}</p>
 
-                           <p><b>Last Received</b> <?php
+                           <p><b>Last Received</b> : <?php include 'includes/getModTime.php';?> </p>
 
-
-                           $filename = '../../../uhen/anita/aware/output/ANITA4/statusPage/hkStatus.json.gz';
-                           if (file_exists($filename)) {
-                               $file_time = new DateTime(date ("Y-m-d H:i:s.", filemtime($filename)));
-                               $current_time = new DateTime(date('Y-m-d H:i:s'));
-
-                               $diff_time = $file_time->diff($current_time);
-
-                               if ($diff_time->i < 5) {
-                                 echo '<span class="label label-sucess">' . $file_time->format('Y-m-d H:i:s') . '</span>';
-                               } else if ($diff_time->i < 10) {
-                                 echo '<span class="label label-warning">' . $file_time->format('Y-m-d H:i:s') . '</span>';
-                               } else {
-                                 echo '<span class="label label-danger">' . $file_time->format('Y-m-d H:i:s') . '</span>';
-                               }
-
-
-                           } else {
-                               echo "No Info";
-                           }
-                           clearstatcache();
-                           ?> </p>
+                          <p> <b>Start Time</b> : {{ time }}</p>
 
                            <p> <b>Run Number</b> : {{ run }}</p>
 

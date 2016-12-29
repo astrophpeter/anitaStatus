@@ -2,10 +2,7 @@
 //date_default_timezone_set('Europe/London');
 
 
-$LIVE_PATH = '../../../uhen/anita/aware/output/ANITA4/statusPage/hkStatus.json.gz';
-
-
-$filename = $LIVE_PATH;
+$filename ='../../../uhen/anita/aware/output/ANITA4/statusPage/hkStatus.json.gz';
 //$filename= 'hkStatus.json';
 //$file_nameMonitor = '../monitorHk.json';
 

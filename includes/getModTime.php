@@ -15,13 +15,13 @@ if (file_exists($filename)) {
     $file_time = new DateTime(date ("Y-m-d H:i:s.", filemtime($filename)));
     //$file_timeMonitor = new DateTime(date ("Y-m-d H:i:s.", filemtime($filenameMonitor)));
 
-    echo 'setting curent time\n';
+    echo 'file time '. $file_time->format('Y-m-d H:i:s');
     $current_time = new DateTime(date('Y-m-d H:i:s'));
 
-    echo 'current time set\n';
+    echo 'Current time ' . $current_time->format('Y-m-d H:i:s');
     $diff_time = $file_time->diff($current_time);
     //$diff_timeMonitor = $file_timeMonitor->diff($current_time);
-    echo ''. $diff_time->format('Y-m-d H:i:s') ;
+    echo 'Diff time '. $diff_time->format('Y-m-d H:i:s') ;
 
 
     if($diff_time->H > 0 || $diff_tine->d > 0 || $diff_time->Y > 0 || $diff_time->m >0) {

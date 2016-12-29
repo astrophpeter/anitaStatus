@@ -21,7 +21,7 @@ if (file_exists($filename)) {
     echo 'current time set\n';
     $diff_time = $file_time->diff($current_time);
     //$diff_timeMonitor = $file_timeMonitor->diff($current_time);
-    echo 'diff time computed\n';
+    echo ''. $diff_time->format('Y-m-d H:i:s') ;
 
 
     if($diff_time->H > 0 || $diff_tine->d > 0 || $diff_time->Y > 0 || $diff_time->m >0) {

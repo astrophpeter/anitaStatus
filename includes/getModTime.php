@@ -3,24 +3,25 @@ echo 'Starting script';
 
 date_default_timezone_set('Europe/London');
 
-echo 'set default time';
+echo 'set default time\n';
 
 $filename ='../../../uhen/anita/aware/output/ANITA4/statusPage/hkStatus.json.gz';
 //$filename= 'hkStatus.json';
 //$file_nameMonitor = '../monitorHk.json';
 
-echo 'file name parsed';
+echo 'file name parsed\n';
 
 if (file_exists($filename)) {
     $file_time = new DateTime(date ("Y-m-d H:i:s.", filemtime($filename)));
     //$file_timeMonitor = new DateTime(date ("Y-m-d H:i:s.", filemtime($filenameMonitor)));
 
-
+    echo 'setting curent time\n';
     $current_time = new DateTime(date('Y-m-d H:i:s'));
 
+    echo 'current time set\n';
     $diff_time = $file_time->diff($current_time);
     //$diff_timeMonitor = $file_timeMonitor->diff($current_time);
-
+    echo 'diff time computed\n';
 
 
     if($diff_time->H > 0 || $diff_tine->d > 0 || $diff_time->Y > 0 || $diff_time->m >0) {

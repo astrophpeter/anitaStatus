@@ -1,10 +1,15 @@
 <?php
+echo 'Starting script';
+
 date_default_timezone_set('Europe/London');
 
+echo 'set default time';
 
 $filename ='../../../uhen/anita/aware/output/ANITA4/statusPage/hkStatus.json.gz';
 //$filename= 'hkStatus.json';
 //$file_nameMonitor = '../monitorHk.json';
+
+echo 'file name parsed';
 
 if (file_exists($filename)) {
     $file_time = new DateTime(date ("Y-m-d H:i:s.", filemtime($filename)));

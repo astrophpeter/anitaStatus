@@ -1,15 +1,15 @@
 <?php
-echo 'Starting script';
+
 
 date_default_timezone_set('Europe/London');
 
-echo 'set default time\n';
+
 
 $filename ='../../../uhen/anita/aware/output/ANITA4/statusPage/hkStatus.json.gz';
 //$filename= 'hkStatus.json';
 //$file_nameMonitor = '../monitorHk.json';
 
-echo 'file name parsed\n';
+
 
 if (file_exists($filename)) {
     $file_time = new DateTime(date ("Y-m-d H:i:s.", filemtime($filename)));
@@ -21,7 +21,7 @@ if (file_exists($filename)) {
     echo 'Current time ' . $current_time->format('Y-m-d H:i:s');
     $diff_time = $file_time->diff($current_time);
     //$diff_timeMonitor = $file_timeMonitor->diff($current_time);
-    echo 'Diff time '. $diff_time->format('Y-m-d H:i:s') ;
+    echo 'Diff time '. $diff_time->format('%a total days') ;
 
 
     if($diff_time->H > 0 || $diff_tine->d > 0 || $diff_time->Y > 0 || $diff_time->m >0) {

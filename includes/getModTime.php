@@ -25,15 +25,19 @@ if (file_exists($filename)) {
 
 
     if($diff_time->H > 0 || $diff_tine->d > 0 || $diff_time->Y > 0 || $diff_time->m >0) {
-
+      echo 'enter first if loop';
       if ($diff_time->i < 3) {
+        echo 'sucess';
         echo '<span class="label label-success">' . $file_time->format('Y-m-d H:i:s') . '</span>';
       } else if ($diff_time->i < 10) {
+        echo 'warning';
         echo '<span class="label label-warning">' . $file_time->format('Y-m-d H:i:s') . '</span>';
       } else {
+        echo 'echo danger';
         echo '<span class="label label-danger">' . $file_time->format('Y-m-d H:i:s') . '</span>';
       }
     } else {
+      echo 'outer danger';
       echo '<span class="label label-danger">' . $file_time->format('Y-m-d H:i:s') . '</span>';
     }
 
@@ -41,5 +45,9 @@ if (file_exists($filename)) {
 } else {
     echo "No Info";
 }
+
+echo 'about to clear cache';
 clearstatcache();
+
+echo 'cache cleared';
 ?>

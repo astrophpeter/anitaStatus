@@ -324,7 +324,7 @@
 
 
 
-                           <p><b>Last Received</b> : <?php include 'includes/getModTime.php';?> </p>
+                           <p><b>Last Received</b> : <!--?php include 'includes/getModTime.php';?>--> </p>
 
                           <p> <b>Start Time</b> : {{ time }}</p>
 

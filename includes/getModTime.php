@@ -28,7 +28,6 @@ if (file_exists($filename)) {
       } else if ($diff_time->format('%i') < 10) {
         echo '<span class="label label-warning">' . $file_time->format('Y-m-d H:i:s') . '</span>';
       } else {
-
         echo '<span class="label label-danger">' . $file_time->format('Y-m-d H:i:s') . '</span>';
       }
 
@@ -38,8 +37,6 @@ if (file_exists($filename)) {
     echo "No Info";
 }
 
-echo 'about to clear cache';
 clearstatcache();
 
-echo 'cache cleared';
 ?>

@@ -21,7 +21,7 @@ if (file_exists($filename)) {
     echo 'Current time ' . $current_time->format('Y-m-d H:i:s');
     $diff_time = $file_time->diff($current_time);
     //$diff_timeMonitor = $file_timeMonitor->diff($current_time);
-    echo 'Diff time '. $diff_time->format('%a total days') ;
+    echo 'Diff time '. $diff_time->format('%i') ;
 
 
     if($diff_time->H > 0 || $diff_tine->d > 0 || $diff_time->Y > 0 || $diff_time->m >0) {
